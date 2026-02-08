@@ -1,25 +1,26 @@
+import { useState } from "react";
+import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
+import Projects from "./components/Projects";
+import Info from "./components/Info";
+import Footer from "./components/Footer";
 
-function App() {
+export default function App() {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
   return (
-    <div>
-      <Header />
+    <div className="min-h-screen flex">
+      <Sidebar open={sidebarOpen} />
 
-      <h1 className="mt-8 text-3xl font-bold text-gray-900">Me?</h1>
+      <div className="flex-1 flex flex-col transition-all duration-300">
+        <Header onToggle={() => setSidebarOpen((v) => !v)} />
 
-      <p className="mt-4 text-lg leading-relaxed text-gray-700">
-        I'm a software engineering and web developer student. I'm incredibly
-        curious to learn everything I can, but unfortunately, I know it's
-        impossible. But of course, I'll keep learning.
-      </p>
-
-      <p className="mt-6 text-lg leading-relaxed text-gray-700">
-        And honestly, I'm still discovering more about myself every day. And you
-        know what? I love writing, whether it's programming or just regular
-        writing.
-      </p>
+        <main className="flex-1 p-6 bg-slate-100">
+          <Info />
+          <Projects />
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 }
-
-export default App;
