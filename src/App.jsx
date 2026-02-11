@@ -1,24 +1,30 @@
-import { useState } from "react";
-import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
 import Projects from "./components/Projects";
 import Info from "./components/Info";
 import Footer from "./components/Footer";
+import DownloadCV from "./components/DownloadCV";
 
 export default function App() {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-
   return (
-    <div className="min-h-screen flex">
-      <Sidebar open={sidebarOpen} />
+    <div className="min-h-screen bg-linear-to-br from-slate-50 via-white to-slate-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Header />
 
-      <div className="flex-1 flex flex-col transition-all duration-300">
-        <Header onToggle={() => setSidebarOpen((v) => !v)} />
+        <main className="py-8 md:py-12">
+          <div className="gap-8 lg:gap-12 items-start">
+            <div className="space-y-6 lg:top-8">
+              <Info />
+              <div className="flex justify-center lg:justify-start">
+                <DownloadCV />
+              </div>
+            </div>
 
-        <main className="flex-1 p-6 bg-slate-100">
-          <Info />
-          <Projects />
+            <div className="lg:col-span-1">
+              <Projects />
+            </div>
+          </div>
         </main>
+
         <Footer />
       </div>
     </div>

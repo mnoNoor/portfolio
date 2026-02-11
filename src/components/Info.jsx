@@ -1,27 +1,103 @@
+import { useState, useEffect } from "react";
+import { Code2, Sparkles, Target } from "lucide-react";
+
 export default function Info() {
+  const roles = ["Web Developer", "Software Engineer"];
+  const [currentRole, setCurrentRole] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentRole((prev) => (prev + 1) % roles.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [roles.length]);
+
+  const highlights = [
+    {
+      icon: <Code2 className="w-5 h-5" />,
+      text: "Passionate about clean code & elegant solutions",
+    },
+    {
+      icon: <Sparkles className="w-5 h-5" />,
+      text: "Always learning, always growing",
+    },
+    {
+      icon: <Target className="w-5 h-5" />,
+      text: "User-focused problem solver",
+    },
+  ];
+
   return (
-    <div>
-      <h1 className="mt-4 md:mt-8 text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 md:mb-6 text-center lg:text-left">
-        Hello, I'm a{" "}
-        <span className="text-blue-600 block sm:inline">Web Developer</span>
-      </h1>
+    <div className="space-y-8">
+      <div>
+        <div className="bg-linear-to-r from-blue-600 to-indigo-600 rounded-lg blur opacity-20"></div>
+        <div className="bg-white rounded-lg p-6 md:p-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium mb-4">
+            <span className="flex h-2 w-2">
+              <span className="h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+              <span className="inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+            </span>
+            Available for opportunities
+          </div>
 
-      <div className="space-y-4 md:space-y-6">
-        <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 text-center lg:text-left">
-          I'm a software engineering and web development student. I'm incredibly
-          curious to learn everything I can, and I know nothing is impossible in
-          the world of technology.
-        </p>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-4">
+            Hi, I'm{" "}
+            <span className="bg-linear-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+              Mohamed Nour
+            </span>
+          </h1>
 
-        <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 text-center lg:text-left">
-          Every day I discover more about myself and this amazing world. I love
-          writing in all forms, whether it's programming or creative writing.
-        </p>
+          <div className="h-16 mb-6">
+            <div className="text-2xl sm:text-3xl md:text-4xl text-gray-700">
+              I'm a{" "}
+              <span className="font-bold text-blue-600 transition-all duration-500 border-b-4 border-blue-200 pb-1">
+                {roles[currentRole]}
+              </span>
+            </div>
+          </div>
 
-        <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 text-center lg:text-left">
-          My goal is to create digital solutions that make people's lives easier
-          and more productive.
-        </p>
+          <div className="space-y-4 text-gray-600 text-lg leading-relaxed">
+            <p className="flex items-start gap-3">
+              <span className="text-blue-500 mt-1">•</span>
+              <span>
+                Software engineering student with an insatiable curiosity for
+                technology and innovation.
+              </span>
+            </p>
+            <p className="flex items-start gap-3">
+              <span className="text-blue-500 mt-1">•</span>
+              <span>
+                Bridging the gap between creative writing and technical
+                problem-solving.
+              </span>
+            </p>
+            <p className="flex items-start gap-3">
+              <span className="text-blue-500 mt-1">•</span>
+              <span>
+                Crafting digital solutions that make a meaningful impact on
+                people's lives.
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        {highlights.map((item, index) => (
+          <div
+            key={index}
+            className="group bg-white p-4 rounded-lg border border-gray-100 hover:border-blue-200 hover:shadow-md transition-all duration-300"
+          >
+            <div className="flex items-center gap-3">
+              <div className="p-2 bg-blue-50 text-blue-600 rounded-lg group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+                {item.icon}
+              </div>
+              <span className="text-sm font-medium text-gray-700 group-hover:text-gray-900">
+                {item.text}
+              </span>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
