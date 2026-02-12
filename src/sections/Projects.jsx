@@ -1,24 +1,24 @@
 const projects = [
   {
-    title: "Portfolio Website",
+    title: "MyStore",
     description:
-      "My personal portfolio built with React and Tailwind CSS to showcase my skills and projects.",
-    tech: ["React", "Tailwind", "Vite"],
-    link: "#",
+      "A Frontend e-commerce application built with React and Tailwind CSS, a fully responsive and visually appealing online store interface.",
+    tech: ["React", "Tailwind", "Zustand", "Shadcn UI"],
+    link: "https://github.com/mnoNoor/Store",
   },
   {
-    title: "Task Manager",
+    title: "Admin Bot",
     description:
-      "A simple and clean task management app with CRUD functionality.",
-    tech: ["JavaScript", "React", "LocalStorage"],
-    link: "#",
+      "A Telegram bot monitors messages and blocks any inappropriate messages, even if they’re coded.",
+    tech: ["Node.js", "Telegraf.js", "Regex"],
+    link: "https://github.com/mnoNoor/UPM-Admin-Bot",
   },
   {
-    title: "Blog Platform",
+    title: "Hall of Fame",
     description:
-      "A minimal blog platform focused on writing and reading experience.",
-    tech: ["React", "Markdown", "CSS"],
-    link: "#",
+      "A frontend website that lets you add your favorite character to a wide selection of amazing ones.",
+    tech: ["React", "Tailwind", "Shadcn UI"],
+    link: "https://github.com/mnoNoor/Hall-of-Fame",
   },
 ];
 
@@ -55,6 +55,8 @@ function Projects() {
 
               <a
                 href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-auto inline-block text-blue-600 font-semibold hover:underline"
               >
                 View Project →

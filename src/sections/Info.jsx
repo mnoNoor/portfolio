@@ -2,13 +2,13 @@ import { useState, useEffect } from "react";
 import { Code2, Sparkles, Target } from "lucide-react";
 
 export default function Info() {
-  const roles = ["Web Developer", "Software Engineer"];
+  const roles = ["Software Engineer", "Web Developer"];
   const [currentRole, setCurrentRole] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentRole((prev) => (prev + 1) % roles.length);
-    }, 5000);
+    }, 3000);
     return () => clearInterval(interval);
   }, [roles.length]);
 
@@ -43,7 +43,7 @@ export default function Info() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-4">
             Hi, I'm{" "}
             <span className="bg-linear-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-              Mohamed Nour
+              Mohammad Nour
             </span>
           </h1>
 

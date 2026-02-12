@@ -4,7 +4,7 @@ export default function DownloadCV() {
   return (
     <div className="flex flex-col sm:flex-row gap-4 items-center">
       <a
-        href="/Mohamed-Nour-CV.pdf"
+        href="/Mohammad-Nour-CV.pdf"
         download
         className="group relative inline-flex items-center justify-center px-6 py-3 font-semibold text-white transition-all duration-300 ease-in-out bg-linear-to-r from-blue-600 to-indigo-600 rounded-lg hover:from-blue-700 hover:to-indigo-700 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
       >
