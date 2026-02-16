@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Code2, Sparkles, Target } from "lucide-react";
+import { Bot, Sparkles, Target } from "lucide-react";
 
 export default function Info() {
   const roles = ["Software Engineer", "Web Developer"];
@@ -14,8 +14,8 @@ export default function Info() {
 
   const highlights = [
     {
-      icon: <Code2 className="w-5 h-5" />,
-      text: "Passionate about clean code & elegant solutions",
+      icon: <Bot className="w-5 h-5" />,
+      text: "Building useful telegram Bots",
     },
     {
       icon: <Sparkles className="w-5 h-5" />,
@@ -43,7 +43,7 @@ export default function Info() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-4">
             Hi, I'm{" "}
             <span className="bg-linear-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-              Mohammad Nour
+              Mohammed Noor
             </span>
           </h1>
 
@@ -67,15 +67,14 @@ export default function Info() {
             <p className="flex items-start gap-3">
               <span className="text-blue-500 mt-1">•</span>
               <span>
-                Bridging the gap between creative writing and technical
-                problem-solving.
+                Crafting digital solutions that have a purpose and a positive
+                impact.
               </span>
             </p>
             <p className="flex items-start gap-3">
               <span className="text-blue-500 mt-1">•</span>
               <span>
-                Crafting digital solutions that make a meaningful impact on
-                people's lives.
+                Design well-structured frontend and backend applications
               </span>
             </p>
           </div>
