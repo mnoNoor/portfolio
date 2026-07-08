@@ -4,6 +4,8 @@ import Info from "./sections/Info";
 import Footer from "./components/Footer";
 import DownloadCV from "./sections/DownloadCV";
 import Email from "./sections/Email";
+import AboutMe from "./sections/AboutME";
+import Skills from "./sections/Skills";
 
 export default function App() {
   return (
@@ -18,9 +20,13 @@ export default function App() {
               <div className="flex justify-center lg:justify-start">
                 <DownloadCV />
               </div>
+              <AboutMe />
+            </div>
+            <div className="lg:col-span-1">
+              <Skills />
             </div>
 
-            <div className="lg:col-span-1">
+            <div className="lg:col-span-1 bg-linear-to-br from-gray-100 via-gray-50 to-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-6">
               <Projects />
             </div>
             <div className="lg:col-span-1">

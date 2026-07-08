@@ -2,48 +2,50 @@ import { ExternalLink, Github, Code } from "lucide-react";
 
 const projectsData = [
   {
-    id: "Uni-Bookstore",
-    title: "Uni Bookstore",
+    id: "ishara",
+    title: "Ishara",
     description:
-      "A bookstore for university students, allowing students to benefit from their used books and sell them at a lower cost to new students.",
+      "Full-stack platform for recording and translating Arabic Sign Language across various regional dialects. Hand landmarks are tracked client-side with MediaPipe.",
     tech: [
-      "MERN",
-      "JWT",
-      "Upstash",
+      "React",
+      "TypeScript",
+      "Vite",
+      "Express",
+      "Drizzle ORM",
+      "PostgreSQL",
+      "MediaPipe",
+    ],
+    link: "",
+    github: "https://github.com/mnoNoor/Ishara",
+  },
+  {
+    id: "uni-store",
+    title: "Uni Store",
+    description:
+      "Full-stack marketplace where students list, browse, and sell used textbooks. Built JWT authentication with HTTP-only cookies, role-based access.",
+    tech: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Redis",
       "Cloudinary",
-      "Zustand",
+      "JWT",
       "Tailwind",
-      "Joi",
+      "i18next",
+      "Swagger",
     ],
     link: "https://book-store-ftd7.onrender.com/",
     github: "https://github.com/mnoNoor/Uni-Store",
   },
   {
-    id: "admin-bot",
-    title: "Admin Bot",
+    id: "telegram-bot",
+    title: "Telegram Moderation Bot",
     description:
-      "Telegram moderation bot that detects and blocks inappropriate messages — even when obfuscated.",
-    tech: ["Node.js", "Telegraf.js", "Regex"],
+      "Regex-based spam and obfuscated-content detection, running live in a 10,000+ member community, with a MongoDB-backed admin dashboard.",
+    tech: ["Node.js", "Telegraf.js", "MongoDB", "Regex"],
     link: "https://github.com/mnoNoor/UPM-Admin-Bot",
     github: "https://github.com/mnoNoor/UPM-Admin-Bot",
-  },
-  {
-    id: "mystore",
-    title: "MyStore",
-    description:
-      "Frontend e-commerce app built with React and Tailwind. Fully responsive with a polished store UI.",
-    tech: ["React", "Tailwind", "Zustand", "Shadcn UI"],
-    link: "https://my-store-five-lyart.vercel.app/",
-    github: "https://github.com/mnoNoor/Store",
-  },
-  {
-    id: "hall-of-fame",
-    title: "Hall of Fame",
-    description:
-      "Frontend site for adding and exploring favorite characters from a curated collection.",
-    tech: ["React", "Tailwind", "Shadcn UI"],
-    link: "https://hall-of-fame-vert.vercel.app/",
-    github: "https://github.com/mnoNoor/Hall-of-Fame",
   },
 ];
 
@@ -117,6 +119,8 @@ function ProjectCard({ project }) {
 }
 
 export default function Projects() {
+  const projectCount = projectsData.length;
+
   return (
     <section id="projects" className="py-16 md:py-24">
       <div className="container mx-auto px-4">
@@ -124,11 +128,22 @@ export default function Projects() {
           My <span className="text-blue-600">Projects</span>
         </h2>
 
-        <div className="grid gap-4 sm:gap-6 grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 xl:w-3/4 max-w-7xl mx-auto">
+        <div
+          className={`
+          grid gap-6 max-w-7xl mx-auto
+          ${projectCount === 3 ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3" : ""}
+          ${projectCount === 2 ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-2" : ""}
+          ${projectCount === 1 ? "grid-cols-1" : ""}
+        `}
+        >
           {projectsData.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>
+
+        {projectCount === 3 && (
+          <div className="hidden md:block lg:hidden"></div>
+        )}
       </div>
     </section>
   );

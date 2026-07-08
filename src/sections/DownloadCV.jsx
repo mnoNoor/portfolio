@@ -2,9 +2,9 @@ import { Download, FileText, Award } from "lucide-react";
 
 export default function DownloadCV() {
   return (
-    <div className="flex flex-col sm:flex-row gap-4 items-center">
+    <div className="flex flex-col sm:flex-row gap-4 items-center justify-center w-full">
       <a
-        href="/Mohammed-Noor-CV.pdf"
+        href="Mohammad_Nour_CV.pdf"
         download
         className="group relative inline-flex items-center justify-center px-6 py-3 font-semibold text-white transition-all duration-300 ease-in-out bg-linear-to-r from-blue-600 to-indigo-600 rounded-lg hover:from-blue-700 hover:to-indigo-700 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
       >
