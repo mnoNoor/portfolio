@@ -12,7 +12,7 @@ export default function AboutMe() {
           {/* الملخص الشخصي */}
           <div className="bg-white rounded-2xl shadow-md p-6 md:p-8 mb-8">
             <div className="flex items-start gap-4">
-              <User className="w-8 h-8 text-blue-600 flex-shrink-0 mt-1" />
+              <User className="w-8 h-8 text-blue-600 shrink-0 mt-1" />
               <div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
                   Full-Stack Developer
@@ -29,9 +29,7 @@ export default function AboutMe() {
             </div>
           </div>
 
-          {/* معلومات إضافية */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {/* التعليم */}
             <div className="bg-white rounded-xl shadow-sm p-5 border border-gray-100 hover:shadow-md transition-shadow">
               <div className="flex items-center gap-3 mb-2">
                 <GraduationCap className="w-5 h-5 text-blue-600" />
@@ -43,7 +41,6 @@ export default function AboutMe() {
               </p>
             </div>
 
-            {/* الجوائز */}
             <div className="bg-white rounded-xl shadow-sm p-5 border border-gray-100 hover:shadow-md transition-shadow">
               <div className="flex items-center gap-3 mb-2">
                 <Award className="w-5 h-5 text-yellow-500" />

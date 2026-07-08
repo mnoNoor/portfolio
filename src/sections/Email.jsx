@@ -16,17 +16,16 @@ export default function Email() {
   };
 
   return (
-    <div className="py-8 md:py-12 border-t border-gray-200 bg-gradient-to-b from-white to-gray-50/50">
+    <div className="py-8 md:py-12 border-t border-gray-200 bg-linear-to-b from-white to-gray-50/50">
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto text-center">
           <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">
             Let's Connect
           </h3>
 
-          {/* البريد الإلكتروني مع أيقونة وزر النسخ */}
           <div className="flex items-center justify-center gap-3 mb-6">
             <div className="flex items-center gap-2 bg-white px-4 py-3 rounded-xl shadow-sm border border-gray-200/80 hover:shadow-md transition-shadow duration-300">
-              <Mail className="w-5 h-5 text-blue-600 flex-shrink-0" />
+              <Mail className="w-5 h-5 text-blue-600 shrink-0" />
               <span className="text-gray-700 text-sm md:text-base font-medium">
                 {email}
               </span>
@@ -45,7 +44,6 @@ export default function Email() {
             </div>
           </div>
 
-          {/* روابط التواصل الاجتماعي */}
           <div className="flex items-center justify-center gap-4">
             <a
               href="mailto:mohammednoor.dev0@gmail.com"
@@ -55,7 +53,7 @@ export default function Email() {
               <Mail className="w-5 h-5 text-gray-600 group-hover:text-blue-600 transition-colors" />
             </a>
             <a
-              href="https://linkedin.com/in/mohammed-noor" // استبدل بالرابط الصحيح
+              href="https://linkedin.com/in/mohammed-noor"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full bg-white shadow-sm border border-gray-200 hover:border-blue-500 hover:shadow-md transition-all duration-300 group"
@@ -64,7 +62,7 @@ export default function Email() {
               <Linkedin className="w-5 h-5 text-gray-600 group-hover:text-blue-600 transition-colors" />
             </a>
             <a
-              href="https://github.com/mnoNoor" // استبدل بالرابط الصحيح
+              href="https://github.com/mnoNoor"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full bg-white shadow-sm border border-gray-200 hover:border-gray-400 hover:shadow-md transition-all duration-300 group"

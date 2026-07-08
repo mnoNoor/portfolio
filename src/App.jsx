@@ -4,7 +4,7 @@ import Info from "./sections/Info";
 import Footer from "./components/Footer";
 import DownloadCV from "./sections/DownloadCV";
 import Email from "./sections/Email";
-import AboutMe from "./sections/AboutME";
+import AboutMe from "./sections/AboutMe";
 import Skills from "./sections/Skills";
 
 export default function App() {
