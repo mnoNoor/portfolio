@@ -63,7 +63,8 @@ export default function Skills() {
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {skillCategories.map((category, index) => {
+          {/* الصف الأول - 3 عناصر */}
+          {skillCategories.slice(0, 3).map((category, index) => {
             const Icon = category.icon;
             return (
               <div
@@ -95,6 +96,44 @@ export default function Skills() {
               </div>
             );
           })}
+
+          {/* الصف الثاني - عنصرين في المنتصف */}
+          <div className="sm:col-span-2 lg:col-span-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+              {skillCategories.slice(3).map((category, index) => {
+                const Icon = category.icon;
+                return (
+                  <div
+                    key={index}
+                    className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-6 border border-gray-100"
+                  >
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="p-2 bg-blue-50 rounded-lg">
+                        <Icon className="w-5 h-5 text-blue-600" />
+                      </div>
+                      <h3 className="text-lg font-semibold text-gray-800">
+                        {category.title}
+                      </h3>
+                    </div>
+
+                    <ul className="space-y-2">
+                      {category.skills.map((skill) => (
+                        <li
+                          key={skill}
+                          className="text-gray-600 text-sm flex items-start gap-2"
+                        >
+                          <span className="text-blue-400 text-lg leading-none">
+                            •
+                          </span>
+                          <span>{skill}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
     </section>
